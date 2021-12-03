@@ -2,7 +2,7 @@ name := "AdventOfCode"
 
 version := "0.1"
 
-scalaVersion := "2.13.7"
+scalaVersion := "3.0.0"
 
 idePackagePrefix := Some("lt.markvl.adventofcode")
 
