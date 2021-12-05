@@ -1,6 +1,6 @@
 package lt.markvl.adventofcode
 
-import monocle.syntax.all.?
+import monocle.syntax.all.*
 
 import scala.util.matching.Regex
 
