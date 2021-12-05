@@ -9,10 +9,20 @@ class PuzzleThreeTest extends AnyFlatSpec, Matchers, TestUtils:
 
   "Part One" should "work with example data" in {
     val input = "/PuzzleThree/exampleInput".readLines(identity)
-    FuelConsumption.consumption(input) should be(198)
+    Diagnostics.consumption(input) should be(198)
   }
 
   it should "Work with real data" in {
     val input = "/PuzzleThree/input".readLines(identity)
-    FuelConsumption.consumption(input) should be(198)
+    Diagnostics.consumption(input) should be(2003336)
+  }
+
+  "Part Two" should "work with example data" in {
+    val input = "/PuzzleThree/exampleInput".readLines(identity)
+    Diagnostics.lifeSupportRating(input) should be(230)
+  }
+
+  it should "Work with real data" in {
+    val input = "/PuzzleThree/input".readLines(identity)
+    Diagnostics.lifeSupportRating(input) should be(1877139)
   }
