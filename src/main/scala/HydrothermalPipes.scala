@@ -30,14 +30,17 @@ extension (pipe: Pipe)
   def vertical: Boolean = pipe.start.x == pipe.end.x
   def nonDiagonal: Boolean = horizontal || vertical
   def points: List[Point] =
-    if (horizontal)
-      (
-        for (x <- pipe.start.x to pipe.end.x) yield Point(x, pipe.start.y)
-      ).toList
-    else
-      (
-        for (y <- pipe.start.y to pipe.end.y) yield Point(pipe.start.x, y)
-      ).toList
+    val seq =
+      if horizontal then
+        for (x <- pipe.start.x to pipe.end.x)
+          yield Point(x, pipe.start.y)
+      else if vertical then
+        for (y <- pipe.start.y to pipe.end.y)
+          yield Point(pipe.start.x, y)
+      else
+        for (d <- 0 to (pipe.end.y - pipe.start.y))
+          yield Point(pipe.start.x, pipe.start.y)
+    seq.toList
 
 extension (pipes: List[Pipe])
   def maxX: Int = pipes.map(p => math.max(p.start.x, p.end.x)).max
@@ -70,5 +73,5 @@ extension (plain: Plain)
       .modify(p => p.updated(point.x, p(point.x).updated(point.y, newValue)))
 
   def draw(pipe: Pipe): Plain =
-//    println(pipe)
-    pipe.points.foldLeft(plain)((plain, point) => plain.draw(point)) // .show()
+    println(pipe)
+    pipe.points.foldLeft(plain)((plain, point) => plain.draw(point)).show()
