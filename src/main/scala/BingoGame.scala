@@ -12,6 +12,14 @@ object BingoGame:
       case Some(board) => board.score
       case None => firstWinBoardScore(choices.tail, boards.mark(choices.head))
 
+  @tailrec
+  def lastWinBoardScore(choices: List[Int], boards: List[Board]): Int =
+    boards match
+      case board :: Nil if board.isVictorious => board.score
+      case _ =>
+        val (_, stillPLaying) = boards.partition(_.isVictorious)
+        lastWinBoardScore(choices.tail, stillPLaying.mark(choices.head))
+
 case class Board(lastCalledNumber: Option[Int], numbers: List[List[Number]])
 
 sealed trait Number

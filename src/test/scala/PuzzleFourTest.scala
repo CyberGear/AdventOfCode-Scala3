@@ -43,3 +43,13 @@ class PuzzleFourTest extends AnyFlatSpec, Matchers, TestUtils:
     val (choices, boards) = readData("/PuzzleFour/input")
     BingoGame.firstWinBoardScore(choices, boards) should be(27027)
   }
+
+  "Part two" should "work with example data" in {
+    val (choices, boards) = readData("/PuzzleFour/exampleInput")
+    BingoGame.lastWinBoardScore(choices, boards) should be(1924)
+  }
+
+  it should "Work with real data" in {
+    val (choices, boards) = readData("/PuzzleFour/input")
+    BingoGame.lastWinBoardScore(choices, boards) should be(36975)
+  }
