@@ -1,6 +1,6 @@
 package lt.markvl.adventofcode
 
-import utils.TestUtils
+import lt.markvl.adventofcode.utils.TestUtils
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers

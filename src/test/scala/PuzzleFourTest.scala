@@ -1,7 +1,7 @@
 package lt.markvl.adventofcode
 
 import monocle.syntax.all.*
-import utils.TestUtils
+import lt.markvl.adventofcode.utils.TestUtils
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers

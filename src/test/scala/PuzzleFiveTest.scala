@@ -1,6 +1,6 @@
 package lt.markvl.adventofcode
 
-import utils.TestUtils
+import lt.markvl.adventofcode.utils.TestUtils
 
 import monocle.syntax.all.*
 import org.scalatest.flatspec.AnyFlatSpec

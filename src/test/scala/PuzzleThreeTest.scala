@@ -1,28 +1,27 @@
 package lt.markvl.adventofcode
 
-import utils.TestUtils
-
+import lt.markvl.adventofcode.utils.TestUtils
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 class PuzzleThreeTest extends AnyFlatSpec, Matchers, TestUtils:
 
   "Part One" should "work with example data" in {
-    val input = "/PuzzleThree/exampleInput".readLines(identity)
+    val input = "/PuzzleThree/exampleInput".readLines()
     Diagnostics.consumption(input) should be(198)
   }
 
   it should "Work with real data" in {
-    val input = "/PuzzleThree/input".readLines(identity)
+    val input = "/PuzzleThree/input".readLines()
     Diagnostics.consumption(input) should be(2003336)
   }
 
   "Part Two" should "work with example data" in {
-    val input = "/PuzzleThree/exampleInput".readLines(identity)
+    val input = "/PuzzleThree/exampleInput".readLines()
     Diagnostics.lifeSupportRating(input) should be(230)
   }
 
   it should "Work with real data" in {
-    val input = "/PuzzleThree/input".readLines(identity)
+    val input = "/PuzzleThree/input".readLines()
     Diagnostics.lifeSupportRating(input) should be(1877139)
   }
