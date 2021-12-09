@@ -50,13 +50,12 @@ extension (state: Statistics)
       depth: Int = 0
   ): String =
     if in.length == 1 then in.head
-    else {
+    else
       ratingFilter(
         filter,
         in.filter(_(depth) == filter(Statistics(in))(depth)),
         depth + 1
       )
-    }
 
   def oxygenGeneratorRating(data: List[String]): Int =
     val rating = ratingFilter(s => toBinaryString(s.gammaRate), data)
