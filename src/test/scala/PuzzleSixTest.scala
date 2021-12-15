@@ -29,5 +29,5 @@ class PuzzleSixTest extends AnyFlatSpec, Matchers, TestUtils:
 
   it should "work with real data" in {
     val lanternfish: List[Lanternfish] = readFile("/PuzzleSix/input")
-    lanternfish.populationSize(256) should be(352195)
+    lanternfish.populationSize(256) should be(1600306001288L)
   }
