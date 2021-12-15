@@ -11,13 +11,16 @@ object Lanternfish:
   def fromString(s: String): Lanternfish = s.toInt
 
   def schoolSize(school: List[Lanternfish], cycles: Int): Long =
-    val lanternMap = school.groupBy(k => k).view.mapValues(_.size.toLong).toMap
-    val sizes: mutable.Map[Lanternfish, Long] = mutable.Map(lanternMap.toSeq: _*)
-    for (d <- 0 until cycles) {
-      val moms = sizes.filter((fish, _) => d >= fish && (d - fish) % 7 == 0).values.sum
-      if moms > 0 then sizes += (d + 9) -> moms
-    }
-    sizes.values.sum
+
+    @tailrec
+    def loop(in: Map[Lanternfish, Long], itr: Int = 0): Long =
+      if cycles == itr then in.values.sum
+      else
+        val moms = in.filter((fish, _) => itr >= fish && (itr - fish) % 7 == 0).values.sum
+        if (moms > 0) loop(in + ((itr + 9) -> moms), itr + 1)
+        else loop(in, itr + 1)
+
+    loop(school.groupBy(k => k).view.mapValues(_.size.toLong).toMap)
 
   extension (lanternfish: List[Lanternfish])
     def populationSize(days: Int): Long =
