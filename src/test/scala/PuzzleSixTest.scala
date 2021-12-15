@@ -22,14 +22,12 @@ class PuzzleSixTest extends AnyFlatSpec, Matchers, TestUtils:
     lanternfish.populationSize(80) should be(352195)
   }
 
-//  "Part two" should "work with example data" in {
-//    val lanternfish: List[Lanternfish] =
-//      "/PuzzleSix/exampleInput"
-//        .readLines(_.split(",").map(Lanternfish.fromString))
-//        .head
-//        .toList
-//
-//    lanternfish.populationSize(256) should be(26984457539L)
-//  }
+  "Part two" should "work with example data" in {
+    val lanternfish: List[Lanternfish] = readFile("/PuzzleSix/exampleInput")
+    lanternfish.populationSize(256) should be(26984457539L)
+  }
 
-//  it should "work with real data" in {}
+  it should "work with real data" in {
+    val lanternfish: List[Lanternfish] = readFile("/PuzzleSix/input")
+    lanternfish.populationSize(256) should be(352195)
+  }
