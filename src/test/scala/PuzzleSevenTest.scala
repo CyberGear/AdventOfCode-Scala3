@@ -13,20 +13,20 @@ class PuzzleSevenTest extends AnyFlatSpec, Matchers, TestUtils:
 
   "Part One" should "work with example data" in {
     val crabs: List[Crab] = readFile("/PuzzleSeven/exampleInput")
-    crabs.bestAlignment should be(2)
+    crabs.minFuelToAlign() should be(37)
   }
 
-//  it should "work with real data" in {
-//    val crabs: List[Crab] = readFile("/PuzzleSeven/input")
-//    crabs.populationSize(80) should be(352195)
-//  }
-//
-//  "Part two" should "work with example data" in {
-//    val crabs: List[Crab] = readFile("/PuzzleSeven/exampleInput")
-//    crabs.populationSize(256) should be(26984457539L)
-//  }
-//
-//  it should "work with real data" in {
-//    val crabs: List[Crab] = readFile("/PuzzleSeven/input")
-//    crabs.populationSize(256) should be(1600306001288L)
-//  }
+  it should "work with real data" in {
+    val crabs: List[Crab] = readFile("/PuzzleSeven/input")
+    crabs.minFuelToAlign() should be(355150)
+  }
+
+  "Part Two" should "work with example data" in {
+    val crabs: List[Crab] = readFile("/PuzzleSeven/exampleInput")
+    crabs.minFuelInefficientsEngine should be(168)
+  }
+
+  it should "work with real data" in {
+    val crabs: List[Crab] = readFile("/PuzzleSeven/input")
+    crabs.minFuelInefficientsEngine should be(98368490)
+  }
