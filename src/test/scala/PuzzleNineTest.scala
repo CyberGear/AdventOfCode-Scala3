@@ -11,7 +11,7 @@ import org.scalatest.matchers.should.Matchers
 class PuzzleNineTest extends AnyFlatSpec, Matchers, TestUtils:
 
   def readFile(path: String): List[List[Int]] =
-    path.readLines().map(_.map(_.toString.toInt).toList)
+    path.readLines(_.map(_.toString.toInt).toList)
 
   "Part One" should "work with example data" in {
     val basinMap: List[List[Int]] = readFile("/PuzzleNine/exampleInput")
