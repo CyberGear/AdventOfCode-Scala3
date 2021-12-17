@@ -21,12 +21,12 @@ class PuzzleTenTest extends AnyFlatSpec, Matchers, TestUtils:
     SpellCheck.corruptionScore(lines) should be(294195)
   }
 
-//  "Part Two" should "work with example data" in {
-//    val basinMap: List[List[Int]] = readFile("/PuzzleNine/exampleInput")
-//    basinMap.multiplyThreeLargestBasins should be(1134)
-//  }
-//
-//  it should "work with real data" in {
-//    val basinMap: List[List[Int]] = readFile("/PuzzleNine/input")
-//    basinMap.multiplyThreeLargestBasins should be(847044)
-//  }
+  "Part Two" should "work with example data" in {
+    val lines: List[String] = "/PuzzleTen/exampleInput".readLines()
+    SpellCheck.completionMiddleScore(lines) should be(288957)
+  }
+
+  it should "work with real data" in {
+    val lines: List[String] = "/PuzzleTen/input".readLines()
+    SpellCheck.completionMiddleScore(lines) should be(3490802734L)
+  }
