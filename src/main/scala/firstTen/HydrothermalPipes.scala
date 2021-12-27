@@ -1,4 +1,4 @@
-package lt.markvl.adventofcode
+package lt.markvl.adventofcode.firstTen
 
 import monocle.syntax.all.*
 
@@ -29,10 +29,8 @@ extension (pipe: Pipe)
   def vertical: Boolean = pipe.start.x == pipe.end.x
   def nonDiagonal: Boolean = horizontal || vertical
   def points: List[Point] =
-    if horizontal then
-      (pipe.start.x iterate pipe.end.x).map(Point(_, pipe.start.y))
-    else if vertical then
-      (pipe.start.y iterate pipe.end.y).map(Point(pipe.start.x, _))
+    if horizontal then (pipe.start.x iterate pipe.end.x).map(Point(_, pipe.start.y))
+    else if vertical then (pipe.start.y iterate pipe.end.y).map(Point(pipe.start.x, _))
     else
       val Pipe(start, end) = pipe
       val positions = (start.x iterate end.x) zip (start.y iterate end.y)

@@ -1,4 +1,4 @@
-package lt.markvl.adventofcode
+package lt.markvl.adventofcode.firstTen
 
 object PuzzleOne:
 

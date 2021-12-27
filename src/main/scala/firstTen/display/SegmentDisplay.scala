@@ -1,7 +1,6 @@
-package lt.markvl.adventofcode
-package display
+package lt.markvl.adventofcode.firstTen.display
 
-import lt.markvl.adventofcode.display.{Digit, Entry}
+import lt.markvl.adventofcode.firstTen.display.{Digit, Entry}
 import Digit.*
 import scala.util.Try
 

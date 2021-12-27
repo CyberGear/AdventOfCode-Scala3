@@ -1,5 +1,4 @@
-package lt.markvl.adventofcode
-package syntax
+package lt.markvl.adventofcode.firstTen.syntax
 
 import Chunk.*
 

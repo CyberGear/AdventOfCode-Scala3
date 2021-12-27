@@ -1,5 +1,4 @@
-package lt.markvl.adventofcode
-package octoflash
+package lt.markvl.adventofcode.secondTen.octoflash
 
 import scala.annotation.tailrec
 

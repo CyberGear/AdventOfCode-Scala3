@@ -1,7 +1,6 @@
-package lt.markvl.adventofcode
+package lt.markvl.adventofcode.secondTen
 
-import basin.*
-import utils.TestUtils
+import lt.markvl.adventofcode.utils.TestUtils
 import octoflash.*
 
 import monocle.syntax.all.*
@@ -13,27 +12,27 @@ class PuzzleElevenTest extends AnyFlatSpec, Matchers, TestUtils:
   def readData(path: String): Octopi = Octopi(path.readLines(_.map(_.toString.toInt).toList))
 
   "Part One" should "work with example data" in {
-    val octopi: Octopi = readData("/PuzzleEleven/exampleInput")
+    val octopi: Octopi = readData("/secondTen/PuzzleEleven/exampleInput")
     Predictor.countFlashes(octopi, 100) should be(1656)
   }
 
   it should "work with real data" in {
-    val octopi: Octopi = readData("/PuzzleEleven/input")
+    val octopi: Octopi = readData("/secondTen/PuzzleEleven/input")
     Predictor.countFlashes(octopi, 100) should be(1585)
   }
 
   "Part Two" should "work with example data" in {
-    val octopi: Octopi = readData("/PuzzleEleven/exampleInput")
+    val octopi: Octopi = readData("/secondTen/PuzzleEleven/exampleInput")
     Predictor.findTotalFlashStep(octopi) should be(195)
   }
 
   it should "work with real data" in {
-    val octopi: Octopi = readData("/PuzzleEleven/input")
+    val octopi: Octopi = readData("/secondTen/PuzzleEleven/input")
     Predictor.findTotalFlashStep(octopi) should be(382)
   }
 
   def makeString(a: List[List[Int]], e: List[List[Int]]): String =
-    import scala.io.AnsiColor._
+    import scala.io.AnsiColor.*
     val zips: List[List[(Int, Int)]] = a.zip(e).map((a, e) => a zip e)
 
     zips

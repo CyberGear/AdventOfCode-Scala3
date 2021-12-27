@@ -1,5 +1,4 @@
-package lt.markvl.adventofcode
-package basin
+package lt.markvl.adventofcode.firstTen.basin
 
 import scala.annotation.tailrec
 

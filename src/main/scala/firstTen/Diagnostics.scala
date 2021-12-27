@@ -1,4 +1,4 @@
-package lt.markvl.adventofcode
+package lt.markvl.adventofcode.firstTen
 
 import monocle.syntax.all.*
 
@@ -19,9 +19,7 @@ object Statistics:
 
   def apply(data: List[String]): Statistics =
     val initialState = Statistics(data.size, List.fill(data.head.length)(0))
-    data.foldLeft(initialState)((state, byteString) =>
-      state.updateCounts(byteString)
-    )
+    data.foldLeft(initialState)((state, byteString) => state.updateCounts(byteString))
 
 extension (state: Statistics)
 

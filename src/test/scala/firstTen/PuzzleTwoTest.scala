@@ -1,4 +1,4 @@
-package lt.markvl.adventofcode
+package lt.markvl.adventofcode.firstTen
 
 import lt.markvl.adventofcode.utils.TestUtils
 
@@ -20,13 +20,13 @@ class PuzzleTwoTest extends AnyFlatSpec, Matchers, TestUtils:
 //  }
 
   "Part Two" should "work with example data" in {
-    val input = "/PuzzleTwo/exampleInput".readLines(Move.fromString)
+    val input = "/firstTen/PuzzleTwo/exampleInput".readLines(Move.fromString)
     val finalPosition = PuzzleTwo.resolvePosition(input)
     PuzzleTwo.positionProduct(finalPosition) should be(900)
   }
 
   it should "work with real data" in {
-    val input = "/PuzzleTwo/input".readLines(Move.fromString)
+    val input = "/firstTen/PuzzleTwo/input".readLines(Move.fromString)
     val finalPosition = PuzzleTwo.resolvePosition(input)
     PuzzleTwo.positionProduct(finalPosition) should be(2078985210)
   }

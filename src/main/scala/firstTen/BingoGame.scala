@@ -1,4 +1,4 @@
-package lt.markvl.adventofcode
+package lt.markvl.adventofcode.firstTen
 
 import monocle.syntax.all.*
 
@@ -10,7 +10,7 @@ object BingoGame:
   def firstWinBoardScore(choices: List[Int], boards: List[Board]): Int =
     boards.find(_.isVictorious) match
       case Some(board) => board.score
-      case None => firstWinBoardScore(choices.tail, boards.mark(choices.head))
+      case None        => firstWinBoardScore(choices.tail, boards.mark(choices.head))
 
   @tailrec
   def lastWinBoardScore(choices: List[Int], boards: List[Board]): Int =

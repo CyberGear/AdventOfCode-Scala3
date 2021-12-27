@@ -1,10 +1,6 @@
-package lt.markvl.adventofcode
+package lt.markvl.adventofcode.firstTen
 
 import scala.annotation.tailrec
-import scala.collection.{IterableOnce, mutable}
-import scala.collection.mutable.{ListBuffer, Seq}
-import scala.runtime.LazyChar
-import Lanternfish.{Lanternfish, *}
 
 object Lanternfish:
   opaque type Lanternfish = Int

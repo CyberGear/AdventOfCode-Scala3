@@ -1,8 +1,8 @@
-package lt.markvl.adventofcode
+package lt.markvl.adventofcode.firstTen
 
-import monocle.syntax.all.*
 import lt.markvl.adventofcode.utils.TestUtils
 
+import monocle.syntax.all.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -35,21 +35,21 @@ class PuzzleFourTest extends AnyFlatSpec, Matchers, TestUtils:
     choices -> boards
 
   "Part One" should "work with example data" in {
-    val (choices, boards) = readData("/PuzzleFour/exampleInput")
+    val (choices, boards) = readData("/firstTen/PuzzleFour/exampleInput")
     BingoGame.firstWinBoardScore(choices, boards) should be(4512)
   }
 
   it should "Work with real data" in {
-    val (choices, boards) = readData("/PuzzleFour/input")
+    val (choices, boards) = readData("/firstTen/PuzzleFour/input")
     BingoGame.firstWinBoardScore(choices, boards) should be(27027)
   }
 
   "Part two" should "work with example data" in {
-    val (choices, boards) = readData("/PuzzleFour/exampleInput")
+    val (choices, boards) = readData("/firstTen/PuzzleFour/exampleInput")
     BingoGame.lastWinBoardScore(choices, boards) should be(1924)
   }
 
   it should "Work with real data" in {
-    val (choices, boards) = readData("/PuzzleFour/input")
+    val (choices, boards) = readData("/firstTen/PuzzleFour/input")
     BingoGame.lastWinBoardScore(choices, boards) should be(36975)
   }

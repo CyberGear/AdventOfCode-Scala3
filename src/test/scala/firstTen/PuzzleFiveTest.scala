@@ -1,4 +1,4 @@
-package lt.markvl.adventofcode
+package lt.markvl.adventofcode.firstTen
 
 import lt.markvl.adventofcode.utils.TestUtils
 
@@ -9,7 +9,7 @@ import org.scalatest.matchers.should.Matchers
 class PuzzleFiveTest extends AnyFlatSpec, Matchers, TestUtils:
 
   "Part One" should "work with example data" in {
-    val input = "/PuzzleFive/exampleInput".readLines(Pipe.fromString)
+    val input = "/firstTen/PuzzleFive/exampleInput".readLines(Pipe.fromString)
 
     HydrothermalPipes.countDangerousPoints(
       input.filter(_.nonDiagonal)
@@ -17,7 +17,7 @@ class PuzzleFiveTest extends AnyFlatSpec, Matchers, TestUtils:
   }
 
   it should "work with real data" in {
-    val input = "/PuzzleFive/input".readLines(Pipe.fromString)
+    val input = "/firstTen/PuzzleFive/input".readLines(Pipe.fromString)
 
     HydrothermalPipes.countDangerousPoints(
       input.filter(_.nonDiagonal)
@@ -25,11 +25,11 @@ class PuzzleFiveTest extends AnyFlatSpec, Matchers, TestUtils:
   }
 
   "Part two" should "work with example data" in {
-    val input = "/PuzzleFive/exampleInput".readLines(Pipe.fromString)
+    val input = "/firstTen/PuzzleFive/exampleInput".readLines(Pipe.fromString)
     HydrothermalPipes.countDangerousPoints(input) should be(12)
   }
 
   it should "work with real data" in {
-    val input = "/PuzzleFive/input".readLines(Pipe.fromString)
+    val input = "/firstTen/PuzzleFive/input".readLines(Pipe.fromString)
     HydrothermalPipes.countDangerousPoints(input) should be(19851)
   }
